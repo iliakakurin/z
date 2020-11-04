@@ -1,4 +1,4 @@
-h = '0123456789abcdef'
+h = '0123456789abcdefABCDEF'
 s = input()
 corr = True
 for x in s:
