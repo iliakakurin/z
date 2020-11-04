@@ -8,7 +8,7 @@ for x in a:
 for x in b:
     if int(x) >= n:
         corr = False
-if corr == True:
+if corr:
     c = int(a, base=n)
     d = int(b, base=n)
     e = c + d
@@ -19,3 +19,4 @@ if corr == True:
     print(res)
 else:
     print('Wrong input!')
+
