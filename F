@@ -1,0 +1,29 @@
+def num_combinations(a, n):
+    d = []
+    while a > 0:
+        d.append(a % 10)
+        a = a // 10
+    d = d[::-1]
+    res = []
+    m = 0
+    while m < 3 ** len(d):
+        s = 0
+        st = ''
+        for i in range(len(d)):
+            znak = (m // (3 ** i)) % 3
+            if znak == 1:
+                st = st + '+' + str(d[i])
+                s = s + d[i]
+            elif znak == 2:
+                st = st + '-' + str(d[i])
+                s = s - d[i]
+        if s == n:
+            if st[0] == '-':
+                res.append(st)
+            else:
+                res.append(st[1:])
+        m += 1
+    return res
+
+
+print(sorted(num_combinations(1234, 2)))
